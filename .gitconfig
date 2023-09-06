@@ -4,7 +4,7 @@
 	process = git-lfs filter-process
 	required = true
 [user]
-	name = Mike
+	name = Michael C. Adams
 	email = 10792116+mcladams@users.noreply.github.com
 [pull]
 	rebase = true
@@ -14,3 +14,5 @@
 	colorMoved = zebra
 [rebase]
 	autoSquash = true
+[init]
+	defaultbranch = main
