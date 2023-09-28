@@ -23,3 +23,6 @@ NTUSER*
 /Searches
 /Videos
 ntuser*
+.config/scoop/
+navdb.casv
+navdb.csv
