@@ -1,1 +1,25 @@
+.bash_history
+/.conf.git
+/.git
+/.gnupg/*
 .lesshst
+/.ssh/*
+/AppData
+/Contacts
+/Desktop
+Documents/*
+!Documents/Poweshell
+Documents/Powershell/Help
+!Documents/WindowsPowerShell
+/Downloads
+/Favorites
+/IntelGraphicsProfiles
+/Links
+/Music
+NTUSER*
+/OneDrive
+/Pictures
+/Saved Games
+/Searches
+/Videos
+ntuser*

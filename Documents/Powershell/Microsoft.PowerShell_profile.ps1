@@ -1,8 +1,10 @@
-# powershell profile for dotconf git; use 'conf' not 'git' in $HOME
-function conf { git --git-dir=$HOME\.conf.git --work-tree=$HOME $args }
+# powershell profile for dotconf git; use 'conf' not 'git' in $env:USERPROFILE
+function conf { git --git-dir=$env:USERPROFILE\.conf.git --work-tree=$env:USERPROFILE $args }
 
 # aliases
-Set-Alias -Name npp -Value "$env:PROGRAMFILES\Notepad++\notepad++.exe"
+  Set-Alias -Name npp -Value "$env:PROGRAMFILES\Notepad++\notepad++.exe"
+  # prevent conf rm removing from working tree
+  Set-Alias -Name "conf rm" -Value "conf rm --cached"
 
 # something from pshazz module for loading ssh agent or keys
 try { $null = gcm pshazz -ea stop; pshazz init } catch { }
@@ -10,8 +12,9 @@ try { $null = gcm pshazz -ea stop; pshazz init } catch { }
 # script to update scoop weekly
 if (Get-Command scoop 2> $null) {
   $doUpdate = $true;
+  $now = [int]$(Get-Date -UFormat %s);
   if ($lastupdate = Get-Content "$env:LOCALAPPDATA\last-scoop-update-timestamp" 2> $null) {
-    if ( (Get-Date -UnixTimeSeconds ([int]$lastupdate + 7 * 24 * 60)) -gt (Get-Date) ) {
+    if ( ([int]$lastupdate + (7 * 24 * 60 * 60)) -gt ($now) ) {
       $doUpdate = $false
     }
   }
@@ -19,13 +22,6 @@ if (Get-Command scoop 2> $null) {
     scoop update;
     sudo scoop update -a -g;
     sudo scoop cleanup -a -g;
-    Get-Date -UFormat "%s" > "$env:LOCALAPPDATA\last-scoop-update-timestamp";
+    $now > "$env:LOCALAPPDATA\last-scoop-update-timestamp";
   }
 }
-
-# check if Documents is a link and replace with target
-#if ( !$(Get-Item $env:USERPROFILE\Downloads).target) {
-#	$targ = $(echo $env:USERPROFILE\Downloads)
-#} else {
-#	$targ = $(Get-Item $env:USERPROFILE\Downloads).target
-#}

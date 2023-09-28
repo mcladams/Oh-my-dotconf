@@ -1,8 +1,8 @@
 # set env and install to c:\Scoop for user
-$env:SCOOP='SCOOP'
-[Environment]::SetEnvironmentVariable('SCOOP', $env:SCOOP)
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-irm get.scoop.sh | iex
+#$env:SCOOP='c:\scoop'
+#[Environment]::SetEnvironmentVariable('SCOOP', 'c:\scoop')
+#Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+#irm get.scoop.sh | iex
 
 # scoop install essentials
 scoop install 7zip git curl sudo
@@ -30,7 +30,6 @@ scoop install Cascadia-Code CascadiaCode-NF FiraCode FiraCode-NF
 JetBrains-Mono JetBrainsMono
 
 # apps
-scoop install nano neovim kdiff3 vcredist2022 wsl-ssh-agent concfg 
-pshazz lxrunoffline
+scoop install nano neovim kdiff3 vcredist2022 wsl-ssh-agent concfg pshazz lxrunoffline
 sudo Set-Service ssh-agent -StartupType Manual
 concfg export console-backup.json
