@@ -16,3 +16,11 @@
 	autoSquash = true
 [init]
 	defaultbranch = main
+[credential "helperselector"]
+	selected = manager
+[credential "https://github.com"]
+	helper = 
+	helper = !'C:\\Scoop\\apps\\gh\\current\\bin\\gh.exe' auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !'C:\\Scoop\\apps\\gh\\current\\bin\\gh.exe' auth git-credential

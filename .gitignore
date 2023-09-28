@@ -1,5 +1,6 @@
 .bash_history
 /.conf.git
+/.config/scoop
 /.git
 /.gnupg/*
 .lesshst
@@ -22,6 +23,7 @@ NTUSER*
 /Saved Games
 /Searches
 /Videos
+navdb.csv
 ntuser*
 .config/scoop/
 navdb.casv
