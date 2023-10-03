@@ -20,3 +20,5 @@
 	helper = manager
 [push]
 	autoSetupRemote = true
+[credential "helperselector"]
+	selected = manager
