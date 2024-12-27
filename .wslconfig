@@ -1,11 +1,3 @@
+
 [wsl2]
-#memory = 4GB
-#processors = 2
-#kernel = C:\\ZFSonWSL\\bzImage
-localhostForwarding = true
-swap = 0
-#swap = 4GB
-#swapfile = I:\\Shared\\WSL2\\wsl-swap.vhdx
-#debugconsole = false
-#[interop]
-#appendWindowsPath = false
+swapFile=D:\\WSL\\wsl-swap.vhdx

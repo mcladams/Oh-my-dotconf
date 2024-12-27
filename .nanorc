@@ -329,4 +329,4 @@
 #bind ^U "{mark}{home}{zap}" main
 #bind ^Z undo main
 #bind ^Y redo main
-include "c:/scoop/apps/nano/current/syntax/*.nanorc"
+include "~/scoop/apps/nano/current/syntax/*.nanorc"
