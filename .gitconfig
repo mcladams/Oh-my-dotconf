@@ -17,4 +17,6 @@
 [push]
 	autoSetupRemote = true
 [credential "helperselector"]
-	selected = manager
+	selected = wincred
+[core]
+	editor = nano
