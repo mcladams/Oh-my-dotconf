@@ -12,11 +12,12 @@
 	autoSquash = true
 [init]
 	defaultbranch = main
-[credential]
-	helper = manager
 [push]
 	autoSetupRemote = true
 [credential "helperselector"]
 	selected = wincred
 [core]
 	editor = nano
+[credential]
+	helper = wincred
+	helper = oauth

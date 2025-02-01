@@ -42,3 +42,14 @@ navdb.csv
 ntuser*
 .wslconfig
 .wslconfig
+.p4merge/
+DL/
+Doc/
+Mus/
+Pics/
+Vids/
+vscode-remote-wsl/
+.viminfo
+Tracing/
+bz*
+CaseSens/
