@@ -1,5 +1,6 @@
 # ensure ssh-agent will work for gcm
-Set-Service ssh-agent -StartupType Manual
+# Set-Service ssh-agent -StartupType Manual
+####! this works:: start-service -name ssh-agent
 
 # import our modules
 foreach ($psmod in (Get-ChildItem -Path $HOME\Documents\Powershell\Modules).Name) {
@@ -14,7 +15,10 @@ function conf { git --git-dir="$HOME\.conf.git\" --work-tree=$HOME $args }
   Set-Alias -Name npp -Value "$env:PROGRAMFILES\Notepad++\notepad++.exe"
 # prevent conf rm removing from working tree
   Set-Alias -Name "conf rm" -Value "conf rm --cached"
-try { $null = gcm pshazz -ea stop; pshazz init 'default' } catch { }
+
+### disabled for now
+# try { $null = gcm pshazz -ea stop; pshazz init 'default' } catch { }
+###
 
 # variables
 Set-Variable -Name "EDITOR" -Option "AllScope" -Scope "Global" -Value "nano"
@@ -23,3 +27,7 @@ Set-Variable -Name "EDITOR" -Option "AllScope" -Scope "Global" -Value "nano"
 oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\kali.omp.json" | Invoke-Expression
 # oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\jandedobbeleer.omp.json" | Invoke-Expression
 # oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\night-owl.omp.json" | Invoke-Expression
+
+#  Set-PSRepository -Name PSGallery  -InstallationPolicy Trusted
+# pstools - powershellget - psreadline - winget - PSWindowsUpdate
+# Install-Module Takeown; install-moodule aptpackage; install-module robocopy; install-module sysinternals
